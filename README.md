@@ -3,6 +3,10 @@
 Poder acceder a los elementos en el DOM real
 </p>
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/62570198/87606959-da333c00-c6c1-11ea-8faf-08b4f1e7a127.gif" alt="ref img"/>
+</p>
+
 ## String Ref
 <p align="center" style="color:red">
 Se encuentra actualmente deprecado y no se debe de usar
