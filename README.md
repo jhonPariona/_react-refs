@@ -3,14 +3,16 @@
 Poder acceder a los elementos en el DOM real
 </p>
 
+[📖 Documentación](https://es.reactjs.org/docs/refs-and-the-dom.html) | [🎬 Como usar react refs _ Leo Medina](https://www.youtube.com/watch?v=xLHDPSIDVyc)
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/62570198/87606959-da333c00-c6c1-11ea-8faf-08b4f1e7a127.gif" alt="ref img"/>
 </p>
 
-## String Ref
-<p align="center" style="color:red">
-Se encuentra actualmente deprecado y no se debe de usar
-</p>
+## [String Ref](https://github.com/jhonPariona/_react-refs/blob/59c339a06c5e6a78fad3bd1dd7224781804ce886/src/pages/classComponents/StringRef.jsx#L30)
+
+Se encuentra actualmente [deprecado](https://es.reactjs.org/docs/refs-and-the-dom.html#legacy-api-string-refs) y no se debe de usar
+
 
 **Solo funciona en class components**
 
