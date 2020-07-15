@@ -3,6 +3,8 @@
 Poder acceder a los elementos en el DOM real
 </p>
 
+![img of refs]()
+
 ## String Ref
 <p align="center" style="color:red">
 Se encuentra actualmente deprecado y no se debe de usar
