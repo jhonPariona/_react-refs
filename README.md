@@ -10,13 +10,20 @@ Poder hacer referencia de un elemento del DOM o de un componente de clase (class
 <img src="https://user-images.githubusercontent.com/62570198/87606959-da333c00-c6c1-11ea-8faf-08b4f1e7a127.gif" alt="ref img"/>
 </p>
 
+## Se puede hacer uso para:
+
+- Controlar focus, selección de textos o reproducción de medios
+- Integracion con bibliotecas DOM de terceros
+
 ## [Create ref](https://github.com/jhonPariona/_react-refs/blob/fd2391fe7d6266559ecdd64100d6e95bb6d2b7c1/src/pages/classComponents/CreateRef.jsx#L13)
 
 [📖 Documentación](https://es.reactjs.org/docs/refs-and-the-dom.html#creating-refs)
 
 "React asignará a la propiedad current el elemento del DOM cuando el componente sea montado, y la asignará de nuevo null cuando sea desmontado. La referencia es actualizada antes de los métodos componentDidMount o componentDidUpdate"
 
-> No puedes hacer uso de referencias en componentes de función debido a que no tienen instancias.
+> No puedes hacer uso de referencias de componentes de función debido a que no tienen instancias.
+
+### createRef a un elemento del DOM
 
 - El método createRef devuelve un objeto que en la clave current tiene la referencia al elemento DOM
 
@@ -63,6 +70,63 @@ class CreateRef extends React.Component {
   }
 }
 ```
+
+### createRef a un componente de clase
+
+[📖 Documentación](https://es.reactjs.org/docs/refs-and-the-dom.html#adding-a-ref-to-a-class-component) |
+
+Podemos hacer un ref a componentes de clase Personalizados y poder hacer uso de sus métodos en el padre.
+
+- En el hijo tenemos el ref y el método que hacen focus
+
+```jsx
+class CustomTextInput extends React.Component {
+  /* Crea una referencia(crea un objeto) para guardar el elemento textInput del DOM */
+  inputRef = React.createRef();
+
+  handleFocus = () => {
+    if (this.inputRef) {
+      console.log("Focus");
+      /* Estamos accediendo la propiedad "current" para obtener el nodo del DOM */
+      this.inputRef.current.focus();
+    }
+  };
+
+  render() {
+    return (
+      <>
+        <h2>
+          <input type="text" ref={this.inputRef} />
+        </h2>
+      </>
+    );
+  }
+}
+```
+
+- Hacemos uso del método handleFocus en el padre para simular un click y que se haga focus al montar el componente
+
+```jsx
+class CreateRefClassComponent extends React.Component {
+  /* Crea una referencia(crea un objeto) para guardar la instancia del componente de clase la cual nos permitirá acceder a sus métodos*/
+  autofocusRef = React.createRef();
+
+  componentDidMount() {
+    /* Podemos tener acceso a sus métodos que estan almacenados en la propiedad current */
+    this.autofocusRef.current.handleFocus();
+  }
+
+  render() {
+    return (
+      <>
+        <CustomTextInput />
+        <CustomTextInput ref={this.autofocusRef} />
+      </>
+    );
+  }
+}
+```
+
 
 ## [Callback ref](https://github.com/jhonPariona/_react-refs/blob/57b8daa031e1311c5995e8a0d267bd728a234000/src/pages/classComponents/CallbackRef.jsx#L43)
 
