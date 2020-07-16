@@ -1,6 +1,6 @@
 <h1 align="center">⚛️ Refs</h1>
 <p align="center">
-Poder acceder a los elementos en el DOM real
+Poder hacer referencia de un elemento del DOM o de un componente de clase (class components porque tiene instancia)
 </p>
 
 [📖 Documentación](https://es.reactjs.org/docs/refs-and-the-dom.html) |
@@ -12,7 +12,11 @@ Poder acceder a los elementos en el DOM real
 
 ## Create ref
 
-React asignará a la propiedad current el elemento del DOM cuando el componente sea montado, y la asignará de nuevo null cuando sea desmontado. La referencia es actualizada antes de los métodos componentDidMount o componentDidUpdate
+[📖 Documentación](https://es.reactjs.org/docs/refs-and-the-dom.html#creating-refs)
+
+"React asignará a la propiedad current el elemento del DOM cuando el componente sea montado, y la asignará de nuevo null cuando sea desmontado. La referencia es actualizada antes de los métodos componentDidMount o componentDidUpdate"
+
+> No puedes hacer uso de referencias en componentes de función debido a que no tienen instancias.
 
 - El método createRef devuelve un objeto que en la clave current tiene la referencia al elemento DOM
 
