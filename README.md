@@ -10,7 +10,7 @@ Poder hacer referencia de un elemento del DOM o de un componente de clase (class
 <img src="https://user-images.githubusercontent.com/62570198/87606959-da333c00-c6c1-11ea-8faf-08b4f1e7a127.gif" alt="ref img"/>
 </p>
 
-## Create ref
+## [Create ref](https://github.com/jhonPariona/_react-refs/blob/fd2391fe7d6266559ecdd64100d6e95bb6d2b7c1/src/pages/classComponents/CreateRef.jsx#L13)
 
 [📖 Documentación](https://es.reactjs.org/docs/refs-and-the-dom.html#creating-refs)
 
