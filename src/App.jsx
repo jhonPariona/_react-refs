@@ -2,7 +2,7 @@ import React from "react";
 
 // import Ref from "./pages/classComponents/StringRef";
 // import Ref from "./pages/classComponents/CallbackRef";
-import Ref from "./pages/functionalComponents/StringRef";
+import Ref from "./pages/classComponents/CreateRef";
 
 const App = () => {
   return (
