@@ -15,6 +15,8 @@ Poder hacer referencia de un elemento del DOM o de un componente de clase (class
 - Controlar focus, selección de textos o reproducción de medios
 - Integracion con bibliotecas DOM de terceros
 
+> El atributo ref es especial y solo se puede usar en componentes de clase y elementos del DOM
+
 ## Create ref
 
 [📖 Documentación](https://es.reactjs.org/docs/refs-and-the-dom.html#creating-refs)
@@ -127,7 +129,6 @@ class CreateRefClassComponent extends React.Component {
 }
 ```
 
-
 ## [Callback ref](https://github.com/jhonPariona/_react-refs/blob/57b8daa031e1311c5995e8a0d267bd728a234000/src/pages/classComponents/CallbackRef.jsx#L43)
 
 [📖 Documentación](https://es.reactjs.org/docs/refs-and-the-dom.html#callback-refs) |
@@ -191,5 +192,114 @@ handleFocus = () => {
   console.log("click in focus");
   console.log(this.refs.nameRef);
   this.refs.nameRef.focus();
+};
+```
+
+<h1 align="center">⚛️ Forwarding Ref</h1>
+<p align="center">
+Reenvio de ref es una característica opcional que permite pasar ref entre componentes
+</p>
+
+## Fordward ref
+
+[📖 Documentación](https://es.reactjs.org/docs/forwarding-refs.html#forwarding-refs-to-dom-components)
+
+Solo funciona para componentes funcionales y a partir de react 16.3
+
+- En el componente padre creamos la ref y la pasamos como parámetro ref al componente funcional hijo
+
+```jsx
+const GrandParent = () => {
+  /* Creamos la ref */
+  const nameRef = React.createRef();
+  return (
+    <div>
+      {/* La pasamos al compoennte hijo */}
+      <CustomComponent ref={nameRef} />
+    </div>
+  );
+};
+```
+
+- Envolvemos el componente hijo(componente funcional) con React.forwardRef el cual recibe una funcion que tiene como segundo parámetro el ref y la asignamos al elemento DOM o componente de clase que queremos referenciar.
+
+```jsx
+const CustomComponent = React.forwardRef((props, ref) => {
+  return (
+    <div>
+      <input type="text" ref={ref} />
+    </div>
+  );
+});
+```
+
+## Implementación anterior a react 16.3
+
+### CreateRef
+
+[📖 Documentación](https://gist.github.com/gaearon/1a018a023347fe1c2476073330cc5509)
+
+Podemos pasar una prop con un nombre alternativo a ref
+
+- Creamos la ref en el componente padre y la enviamos al hijo como una prop con un nombre diferente a ref
+
+```jsx
+class GrandParent extends React.Component {
+  constructor(props) {
+    super(props);
+    /* Creamos el ref */
+    this.nameRef = React.createRef();
+  }
+  render() {
+    /* LO enviamos en una prop */
+    return <Parent inputRef={this.nameRef} />;
+  }
+}
+```
+
+- Asignamos la ref que pasamos al elemento o clase en su atributo ref
+
+```jsx
+const CustomComponent = (props) => {
+  return (
+    <div>
+      {/* Asignamos la prop recibida */}
+      <input type="text" ref={props.inputRef} />
+    </div>
+  );
+};
+```
+
+### CallbackRef
+
+[📖 Documentación](https://es.reactjs.org/docs/refs-and-the-dom.html#callback-refs)
+
+Podemos pasar una prop con un nombre alternativo a ref
+
+- Creamos el callback en el componente padre y la enviamos al hijo como una prop con un nombre diferente a ref
+
+```jsx
+class GrandParent extends React.Component {
+  nameRef = null;
+  callbackRef = (element) => {
+    this.nameRef = element;
+  };
+  render() {
+    /* LO enviamos en una prop */
+    return <Parent inputRef={this.callbackRef} />;
+  }
+}
+```
+
+- Asignamos la ref que pasamos al elemento o clase en su atributo ref
+
+```jsx
+const CustomComponent = (props) => {
+  return (
+    <div>
+      {/* Asignamos la prop recibida */}
+      <input type="text" ref={props.inputRef} />
+    </div>
+  );
 };
 ```
