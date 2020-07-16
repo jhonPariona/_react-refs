@@ -71,7 +71,7 @@ class CreateRef extends React.Component {
 }
 ```
 
-### createRef a un componente de clase
+### [createRef a un componente de clase](https://github.com/jhonPariona/_react-refs/blob/9c9dd7e6e1fa401f414575f9deaba074c692f4ec/src/pages/classComponents/components/CreateRefClassComponent.jsx#L11)
 
 [📖 Documentación](https://es.reactjs.org/docs/refs-and-the-dom.html#adding-a-ref-to-a-class-component) |
 
