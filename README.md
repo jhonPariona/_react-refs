@@ -200,7 +200,7 @@ handleFocus = () => {
 Reenvio de ref es una característica opcional que permite pasar ref entre componentes
 </p>
 
-## Fordward ref
+## [Fordward ref](https://github.com/jhonPariona/_react-refs/blob/503addbe87924d4ddd7b577a42d31bded5da4da5/src/pages/forwardingRefs/FordwardRef.jsx#L4)
 
 [📖 Documentación](https://es.reactjs.org/docs/forwarding-refs.html#forwarding-refs-to-dom-components)
 
@@ -235,7 +235,7 @@ const CustomComponent = React.forwardRef((props, ref) => {
 
 ## Implementación anterior a react 16.3
 
-### CreateRef
+### [CreateRef](https://github.com/jhonPariona/_react-refs/blob/503addbe87924d4ddd7b577a42d31bded5da4da5/src/pages/forwardingRefs/AlternativeForwardCreateRef.jsx#L26)
 
 [📖 Documentación](https://gist.github.com/gaearon/1a018a023347fe1c2476073330cc5509)
 
@@ -270,7 +270,7 @@ const CustomComponent = (props) => {
 };
 ```
 
-### CallbackRef
+### [CallbackRef](https://github.com/jhonPariona/_react-refs/blob/503addbe87924d4ddd7b577a42d31bded5da4da5/src/pages/forwardingRefs/CallbackRef.jsx#L30)
 
 [📖 Documentación](https://es.reactjs.org/docs/refs-and-the-dom.html#callback-refs)
 
