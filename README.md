@@ -15,7 +15,7 @@ Poder hacer referencia de un elemento del DOM o de un componente de clase (class
 - Controlar focus, selección de textos o reproducción de medios
 - Integracion con bibliotecas DOM de terceros
 
-## [Create ref](https://github.com/jhonPariona/_react-refs/blob/fd2391fe7d6266559ecdd64100d6e95bb6d2b7c1/src/pages/classComponents/CreateRef.jsx#L13)
+## Create ref
 
 [📖 Documentación](https://es.reactjs.org/docs/refs-and-the-dom.html#creating-refs)
 
@@ -23,7 +23,7 @@ Poder hacer referencia de un elemento del DOM o de un componente de clase (class
 
 > No puedes hacer uso de referencias de componentes de función debido a que no tienen instancias.
 
-### createRef a un elemento del DOM
+### [createRef a un elemento del DOM](https://github.com/jhonPariona/_react-refs/blob/fd2391fe7d6266559ecdd64100d6e95bb6d2b7c1/src/pages/classComponents/CreateRef.jsx#L13)
 
 - El método createRef devuelve un objeto que en la clave current tiene la referencia al elemento DOM
 
